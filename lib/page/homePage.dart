@@ -140,15 +140,15 @@ Widget _background(context) {
                 ),
                 IconText(
                   icon: Icons.call,
-                  text: 'hello',
+                  text: 'call',
                 ),
                 IconText(
-                  icon: Icons.call,
-                  text: 'hello',
+                  icon: Icons.notifications,
+                  text: 'bell',
                 ),
                 IconText(
-                  icon: Icons.call,
-                  text: 'hello',
+                  icon: Icons.menu,
+                  text: 'menu',
                 ),
               ],
             ),
