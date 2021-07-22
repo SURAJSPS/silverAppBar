@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:telegram/homePage.dart';
+import 'package:telegram/page/homePage.dart';
 
 void main() {
   runApp(MyApp());

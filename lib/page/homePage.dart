@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:telegram/widget.dart';
+import 'package:telegram/widget/text_icon.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -73,66 +73,7 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
-              background: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image(
-                    height: size.height * .57,
-                    fit: BoxFit.cover,
-                    width: size.width,
-                    image: NetworkImage(
-                      'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
-                    ),
-                  ),
-                  Hero(
-                    tag: {"ker": "key1"},
-                    child: Container(
-                      color: Colors.black,
-                      height: size.height * .57 - size.height * .49,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 5),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 5),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Name',
-                                    textAlign: TextAlign.start,
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Text(
-                                    'Last seen todat at 12:04 Pm',
-                                    textAlign: TextAlign.start,
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            IconText(
-                              icon: Icons.call,
-                              text: 'hello',
-                            ),
-                            IconText(
-                              icon: Icons.call,
-                              text: 'hello',
-                            ),
-                            IconText(
-                              icon: Icons.call,
-                              text: 'hello',
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
+              background: _background(context),
             ),
           ),
           SliverToBoxAdapter(
@@ -161,4 +102,67 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+Widget _background( context) {
+  Size size = MediaQuery.of(context).size;
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Image(
+        height: size.height * .57,
+        fit: BoxFit.cover,
+        width: size.width,
+        image: NetworkImage(
+          'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
+        ),
+      ),
+      Hero(
+        tag: {"ker": "key1"},
+        child: Container(
+          color: Colors.black,
+          height: size.height * .57 - size.height * .49,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Name',
+                        textAlign: TextAlign.start,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        'Last seen todat at 12:04 Pm',
+                        textAlign: TextAlign.start,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ),
+                IconText(
+                  icon: Icons.call,
+                  text: 'hello',
+                ),
+                IconText(
+                  icon: Icons.call,
+                  text: 'hello',
+                ),
+                IconText(
+                  icon: Icons.call,
+                  text: 'hello',
+                ),
+              ],
+            ),
+          ),
+        ),
+      )
+    ],
+  );
 }
