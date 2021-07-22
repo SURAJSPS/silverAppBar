@@ -76,14 +76,6 @@ class _HomePageState extends State<HomePage> {
               background: _background(context),
             ),
           ),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: 20,
-              child: Center(
-                child: Text('Scroll to see the SliverAppBar in effect.'),
-              ),
-            ),
-          ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
@@ -104,7 +96,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Widget _background( context) {
+Widget _background(context) {
   Size size = MediaQuery.of(context).size;
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
